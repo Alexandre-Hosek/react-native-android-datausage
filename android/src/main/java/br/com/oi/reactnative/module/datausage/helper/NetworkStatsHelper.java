@@ -10,7 +10,6 @@ import android.os.RemoteException;
 import android.telephony.TelephonyManager;
 
 import java.util.Date;
-import java.util.Log;
 
 @TargetApi(Build.VERSION_CODES.M)
 public class NetworkStatsHelper {
@@ -116,7 +115,6 @@ public class NetworkStatsHelper {
         networkStats.getNextBucket(bucket);
         long rx = bucket.getRxBytes();
         networkStats.close();
-        Log.i("rx",rx);
         return rx;
     }
 
@@ -140,7 +138,6 @@ public class NetworkStatsHelper {
         networkStats.getNextBucket(bucket);
         long tx = bucket.getTxBytes();
         networkStats.close();
-        Log.i("tx:", tx);
         return tx;
     }
 
